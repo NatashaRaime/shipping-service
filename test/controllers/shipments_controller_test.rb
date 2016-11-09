@@ -1,5 +1,6 @@
 require 'test_helper'
-
+require 'simplecov'
+#ActiveSupport::TestCase  ??
 class ShipmentsControllerTest < ActionController::TestCase
   setup do
     @shipment = shipments(:one)

@@ -1,5 +1,5 @@
 class Shipment < ActiveRecord::Base
-  include ActiveMerchant::Shipping
+  include ActiveShipping::Shipping
   # this needs to be in the model for petsy
   #cylinder = boolean
   # validates :name, presence: true

@@ -5,55 +5,61 @@ class ShipmentsController < ApplicationController
   # GET /shipments.json
   def index
     @shipments = Shipment.all
-
     render json: @shipments
   end
-
   # GET /shipments/1
   # GET /shipments/1.json
   def show
     render json: @shipment
   end
 
+  def search
+    pets = Pet.search(params[:query])
+    render json: pets, only: [:age, :id, :human, :name]
+  end
+end
+
+#_____________ Below is the general framework for shipping in Petsy_____________
+
   # POST /shipments
   # POST /shipments.json
-  def create
-    @shipment = Shipment.new(shipment_params)
-
-    if @shipment.save
-      render json: @shipment, status: :created, location: @shipment
-    else
-      render json: @shipment.errors, status: :unprocessable_entity
-    end
-  end
+  # def create
+  #   @shipment = Shipment.new(shipment_params)
+  #
+  #   if @shipment.save
+  #     render json: @shipment, status: :created, location: @shipment
+  #   else
+  #     render json: @shipment.errors, status: :unprocessable_entity
+  #   end
+  # end
 
   # PATCH/PUT /shipments/1
   # PATCH/PUT /shipments/1.json
-  def update
-    @shipment = Shipment.find(params[:id])
-
-    if @shipment.update(shipment_params)
-      head :no_content
-    else
-      render json: @shipment.errors, status: :unprocessable_entity
-    end
-  end
+  # def update
+  #   @shipment = Shipment.find(params[:id])
+  #
+  #   if @shipment.update(shipment_params)
+  #     head :no_content
+  #   else
+  #     render json: @shipment.errors, status: :unprocessable_entity
+  #   end
+  # end
 
   # DELETE /shipments/1
   # DELETE /shipments/1.json
-  def destroy
-    @shipment.destroy
-
-    head :no_content
-  end
-
-  private
-
-    def set_shipment
-      @shipment = Shipment.find(params[:id])
-    end
-
-    def shipment_params
-      params[:shipment]
-    end
-end
+#   def destroy
+#     @shipment.destroy
+#
+#     head :no_content
+#   end
+#
+#   private
+#
+#     def set_shipment
+#       @shipment = Shipment.find(params[:id])
+#     end
+#
+#     def shipment_params
+#       params[:shipment]
+#     end
+# end
