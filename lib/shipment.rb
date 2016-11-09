@@ -2,7 +2,7 @@ require_relative 'package'
 class Shipment < ActiveRecord::Base
   #activemerchant::shipping
   include ActiveShipping::Shipping
-  
+
     USPSLOGIN = ENV["USPS_LOGIN"]
     UPSLOGIN = ENV["UPS_LOGIN"]
     UPS_KEY = ENV["UPS_KEY"]

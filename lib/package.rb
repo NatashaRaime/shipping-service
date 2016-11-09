@@ -1,4 +1,4 @@
-class Shipment < ActiveRecord::Base
+class Package < ActiveRecord::Base
   include ActiveShipping::Shipping
   # this needs to be in the model for petsy
   #cylinder = boolean
