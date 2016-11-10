@@ -69,7 +69,7 @@ end
       gem 'minitest'
     # gem 'simplecov'
     group :production do
-      # gem 'pg'
+      gem 'pg'
       gem 'rails_12factor'
     end
   end
