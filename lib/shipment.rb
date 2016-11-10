@@ -12,7 +12,6 @@ class Shipment #< ActiveRecord::Base
 
 
   def initialize(origin, destination, packages)
-    puts origin[:country]
     @origin = origins(origin["country"], origin[:state], origin[:city], origin[:zip])
     @destination = destinations(destination[:country], destination[:state], destination[:city], destination[:zip])
     @packages = package(packages[:weight], packages[:dimensions][0], packages[:dimensions][1], packages[:dimensions][2])
@@ -29,7 +28,7 @@ class Shipment #< ActiveRecord::Base
   end
 
   def destinations(country, state, city, zip)
-    destination = ActiveShipping::Location.new(country: "US", state: "WA", city: "Seattle", zip: "98101")
+    destination = ActiveShipping::Location.new(country: country, state: state, city: city, zip: zip)
     return destination
   end
 
@@ -39,6 +38,11 @@ class Shipment #< ActiveRecord::Base
     return response
   end
 
+  def usps(origin, destination, packages)
+    usps = ActiveShipping::UPS.new(login: USPSLOGIN)
+    response = usps.find_rates(origin, destination, packages)
+    return response
+  end
 
 
 end
