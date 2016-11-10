@@ -14,27 +14,27 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-11-10T14:26:30-08:00">2016-11-10T14:26:30-08:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-11-10T15:56:31-08:00">2016-11-10T15:56:31-08:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">100.0%</span></span>
+    (<span class="covered_percent"><span class="green">97.73%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.32
+         1.26
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>4</b> files in total.
-    <b>39</b> relevant lines. 
-    <span class="green"><b>39</b> lines covered</span> and
-    <span class="red"><b>0</b> lines missed </span>
+    <b>44</b> relevant lines. 
+    <span class="green"><b>43</b> lines covered</span> and
+    <span class="red"><b>1</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -62,12 +62,12 @@
       
       <tr>
         <td class="strong"><a href="#c0b28f0f6bccd1bb152f39c8b1b0f97679d97f6f" class="src_link" title="app/controllers/shipments_controller.rb">app/controllers/shipments_controller.rb</a></td>
-        <td class="green strong">100.0 %</td>
-        <td>18</td>
-        <td>6</td>
-        <td>6</td>
-        <td>0</td>
-        <td>1.0</td>
+        <td class="green strong">90.91 %</td>
+        <td>28</td>
+        <td>11</td>
+        <td>10</td>
+        <td>1</td>
+        <td>0.9</td>
       </tr>
       
       <tr>
@@ -157,11 +157,11 @@
         <div class="source_table" id="c0b28f0f6bccd1bb152f39c8b1b0f97679d97f6f">
   <div class="header">
     <h3>app/controllers/shipments_controller.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
+    <h4><span class="green">90.91 %</span> covered</h4>
     <div>
-      <b>6</b> relevant lines. 
-      <span class="green"><b>6</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <b>11</b> relevant lines. 
+      <span class="green"><b>10</b> lines covered</span> and
+      <span class="red"><b>1</b> lines missed.</span>
     </div>
   </div>
   
@@ -171,49 +171,49 @@
         <li class="covered" data-hits="1" data-linenumber="1">
           <span class="hits">1</span>
           
+          <code class="ruby">require &#39;timeout&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
           <code class="ruby">class ShipmentsController &lt; ApplicationController</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="2">
+        <li class="never" data-hits="" data-linenumber="3">
           
           
           <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="3">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def create</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="4">
           <span class="hits">1</span>
           
-          <code class="ruby">    shipment = Shipment.new(params[:shipment][:origin], params[:shipment][:destination], params[:shipment][:packages])</code>
+          <code class="ruby">  def create</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="5">
+        <li class="covered" data-hits="1" data-linenumber="5">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    logger.info &quot;#{params}&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="6">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="6">
+        <li class="covered" data-hits="1" data-linenumber="7">
           <span class="hits">1</span>
           
-          <code class="ruby">    ups_rates = Shipment.ups(shipment.origin, shipment.destination, shipment.packages)</code>
+          <code class="ruby">    status = Timeout::timeout(10) {</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="7">
+        <li class="never" data-hits="" data-linenumber="8">
           
           
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="8">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    usps_rates = Shipment.usps(shipment.origin, shipment.destination, shipment.packages)</code>
+          <code class="ruby">  # Something that should be interrupted if it takes more than 5 seconds...</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="9">
@@ -225,52 +225,112 @@
         <li class="covered" data-hits="1" data-linenumber="10">
           <span class="hits">1</span>
           
-          <code class="ruby">    render json: {&quot;ups&quot;: ups_rates, &quot;usps&quot;: usps_rates}, status: :created</code>
+          <code class="ruby">      shipment = Shipment.new(params[:shipment][:origin], params[:shipment][:destination], params[:shipment][:packages])</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="11">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="12">
+        <li class="covered" data-hits="1" data-linenumber="12">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">      ups_rates = Shipment.ups(shipment.origin, shipment.destination, shipment.packages)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="13">
           
           
-          <code class="ruby">  #private</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="14">
+        <li class="covered" data-hits="1" data-linenumber="14">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">      usps_rates = Shipment.usps(shipment.origin, shipment.destination, shipment.packages)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="15">
           
           
-          <code class="ruby">  # def shipment_params</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="16">
+        <li class="covered" data-hits="1" data-linenumber="16">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  #   params.require(:shipment).permit(:origin, :destination, :packages)</code>
+          <code class="ruby">      render json: {&quot;ups&quot;: ups_rates, &quot;usps&quot;: usps_rates}, status: :created }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="17">
           
           
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="18">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    if status == false</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="19">
+          
+          
+          <code class="ruby">      redirect_to :timeout</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="20">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="21">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="22">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="23">
+          
+          
+          <code class="ruby">  #private</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="24">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="25">
+          
+          
+          <code class="ruby">  # def shipment_params</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="26">
+          
+          
+          <code class="ruby">  #   params.require(:shipment).permit(:origin, :destination, :packages)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="27">
+          
+          
           <code class="ruby">  # end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="18">
+        <li class="never" data-hits="" data-linenumber="28">
           
           
           <code class="ruby">end</code>

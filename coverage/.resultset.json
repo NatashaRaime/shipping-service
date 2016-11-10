@@ -3,15 +3,25 @@
     "coverage": {
       "/Users/natashaewing/Documents/AdaProjects/shipping/shipping-service/app/controllers/shipments_controller.rb": [
         1,
-        null,
-        1,
         1,
         null,
         1,
+        1,
+        null,
+        1,
+        null,
         null,
         1,
         null,
         1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        0,
+        null,
         null,
         null,
         null,
@@ -83,6 +93,6 @@
         null
       ]
     },
-    "timestamp": 1478816790
+    "timestamp": 1478822191
   }
 }
