@@ -1,24 +1,8 @@
 {
   "MiniTest": {
     "coverage": {
-      "/Users/natashaewing/Documents/AdaProjects/shipping/shipping-service/app/controllers/shipments_controller.rb": [
+      "/Users/DS/ada/class-exercises/project-forks/shipping-service/app/controllers/shipments_controller.rb": [
         1,
-        null,
-        null,
-        1,
-        0,
-        0,
-        null,
-        null,
-        null,
-        1,
-        0,
-        null,
-        null,
-        1,
-        0,
-        0,
-        null,
         null,
         1,
         1,
@@ -30,48 +14,45 @@
         1,
         null,
         null,
-        1,
         null,
-        1,
-        0,
+        null,
+        null,
+        null,
         null,
         null
       ],
-      "/Users/natashaewing/Documents/AdaProjects/shipping/shipping-service/app/controllers/application_controller.rb": [
+      "/Users/DS/ada/class-exercises/project-forks/shipping-service/app/controllers/application_controller.rb": [
         1,
         null,
         null,
         null,
-        1,
         null,
         null,
         null,
-        1,
-        0,
-        0,
         null,
         null,
         null,
-        1,
-        0,
         null,
         null,
-        1,
-        0,
-        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
         null,
         null
       ],
-      "/Users/natashaewing/Documents/AdaProjects/shipping/shipping-service/app/helpers/application_helper.rb": [
+      "/Users/DS/ada/class-exercises/project-forks/shipping-service/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/natashaewing/Documents/AdaProjects/shipping/shipping-service/lib/shipment.rb": [
-        null,
+      "/Users/DS/ada/class-exercises/project-forks/shipping-service/lib/shipment.rb": [
         1,
         1,
-        null,
-        null,
         null,
         1,
         1,
@@ -120,6 +101,6 @@
         null
       ]
     },
-    "timestamp": 1478814025
+    "timestamp": 1478815773
   }
 }

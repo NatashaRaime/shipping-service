@@ -31,14 +31,14 @@ class Shipment
   end
 
   def self.ups(origin, destination, packages)
-    ups = ActiveShipping::UPS.new(login: "shopifolk", password: "Shopify_rocks", key: "7CE85DED4C9D07AB")
+    ups = ActiveShipping::UPS.new(login: UPSLOGIN, password: UPS_PASSWORD, key: UPS_KEY)
     response = ups.find_rates(origin, destination, packages)
     ups_rates = response.rates.sort_by(&:price).collect {|rate| [rate.service_name, rate.price]}
     return ups_rates
   end
 
   def self.usps(origin, destination, packages)
-    usps = ActiveShipping::USPS.new(login: "677JADED7283")
+    usps = ActiveShipping::USPS.new(login: USPSLOGIN)
     response = usps.find_rates(origin, destination, packages)
     usps_rates = response.rates.sort_by(&:price).collect {|rate| [rate.service_name, rate.price]}
     return usps_rates
