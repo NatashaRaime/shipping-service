@@ -1,5 +1,6 @@
 # require_relative 'package'
 class Shipment #< ActiveRecord::Base
+  attr_reader :origin, :destination, :packages
   #activemerchant::shipping
   # include ActiveShipping::Shipping
 
@@ -32,16 +33,18 @@ class Shipment #< ActiveRecord::Base
     return destination
   end
 
-  def ups(origin, destination, packages)
-    ups = ActiveShipping::UPS.new(login: UPSLOGIN, password: UPS_PASSWORD, key: UPS_KEY)
+  def self.ups(origin, destination, packages)
+    ups = ActiveShipping::UPS.new(login: "shopifolk", password: "Shopify_rocks", key: "7CE85DED4C9D07AB")
     response = ups.find_rates(origin, destination, packages)
-    return response
+    ups_rates = response.rates.sort_by(&:price).collect {|rate| [rate.service_name, rate.price]}
+    return ups_rates
   end
 
-  def usps(origin, destination, packages)
-    usps = ActiveShipping::UPS.new(login: USPSLOGIN)
+  def self.usps(origin, destination, packages)
+    usps = ActiveShipping::USPS.new(login: "677JADED7283")
     response = usps.find_rates(origin, destination, packages)
-    return response
+    usps_rates = response.rates.sort_by(&:price).collect {|rate| [rate.service_name, rate.price]}
+    return usps_rates
   end
 
 
