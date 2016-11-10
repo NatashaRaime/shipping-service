@@ -15,7 +15,7 @@ gem 'rails-api'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.7'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'sqlite3', '~> 1.3.12'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -65,7 +65,7 @@ end
   group :test do
     gem 'minitest-rails'
       gem 'minitest-reporters'
-      gem 'simplecov'
+      # gem 'simplecov'
       gem 'minitest'
     # gem 'simplecov'
     group :production do
