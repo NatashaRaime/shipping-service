@@ -17,23 +17,13 @@ class ShipmentsController < ApplicationController
   end
 
   def create
-    puts ">>>>>>>>>>>>>>>>>>params are: #{params}"
-    # shipment = Shipment.new(shipment_params)
-
     shipment = Shipment.new(params[:shipment][:origin], params[:shipment][:destination], params[:shipment][:packages])
 
     ups_rates = Shipment.ups(shipment.origin, shipment.destination, shipment.packages)
 
-    puts ">>>>>>>>>>>>>>>>> ups: #{ups_rates}"
-
     usps_rates = Shipment.usps(shipment.origin, shipment.destination, shipment.packages)
 
-    puts ">>>>>>>>>>>>>>>>> usps: #{usps_rates}"
-
-    # binding.pry
-
-    # shipment.save
-    render json: {}, status: :created
+    render json: {"ups": ups_rates, "usps": usps_rates}, status: :created
   end
 
   private
