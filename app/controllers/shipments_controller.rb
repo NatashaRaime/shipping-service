@@ -10,8 +10,8 @@ class ShipmentsController < ApplicationController
     render json: {"ups": ups_rates, "usps": usps_rates}, status: :created
   end
 
-  # private
-  #
+  #private
+
   # def shipment_params
   #   params.require(:shipment).permit(:origin, :destination, :packages)
   # end

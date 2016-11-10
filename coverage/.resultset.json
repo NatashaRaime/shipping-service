@@ -18,7 +18,6 @@
         null,
         null,
         null,
-        null,
         null
       ],
       "/Users/DS/ada/class-exercises/project-forks/shipping-service/app/controllers/application_controller.rb": [
@@ -26,6 +25,7 @@
         null,
         null,
         null,
+<<<<<<< HEAD
         null,
         null,
         null,
@@ -44,13 +44,19 @@
         null,
         null,
         null,
+=======
+>>>>>>> 63f92847adbb8d111aeaf5eabb343096ff682ff4
         null
       ],
       "/Users/DS/ada/class-exercises/project-forks/shipping-service/app/helpers/application_helper.rb": [
         1,
         null
       ],
+<<<<<<< HEAD
       "/Users/DS/ada/class-exercises/project-forks/shipping-service/lib/shipment.rb": [
+=======
+      "/Users/natashaewing/Documents/AdaProjects/shipping/shipping-service/lib/shipment.rb": [
+>>>>>>> 63f92847adbb8d111aeaf5eabb343096ff682ff4
         1,
         1,
         null,
@@ -101,6 +107,10 @@
         null
       ]
     },
+<<<<<<< HEAD
     "timestamp": 1478815773
+=======
+    "timestamp": 1478815018
+>>>>>>> 63f92847adbb8d111aeaf5eabb343096ff682ff4
   }
 }
