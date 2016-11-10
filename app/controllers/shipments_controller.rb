@@ -17,9 +17,13 @@ class ShipmentsController < ApplicationController
   end
 
   def create
-    puts ">>>>>>>>>>>>>>>>>>#{params}"
-    shipment = Shipment.new(shipment_params)
-    shipment.save
+    puts ">>>>>>>>>>>>>>>>>>params are: #{params}"
+    # shipment = Shipment.new(shipment_params)
+
+    shipment = Shipment.new(params[:shipment][:origin], params[:shipment][:destination], params[:shipment][:packages])
+
+    puts ">>>>>>>>>>>>>>>>shipment: #{shipment}"
+    # shipment.save
     render json: {}, status: :created
   end
 
