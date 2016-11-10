@@ -1,8 +1,5 @@
-# require_relative 'package'
-class Shipment #< ActiveRecord::Base
+class Shipment
   attr_reader :origin, :destination, :packages
-  #activemerchant::shipping
-  # include ActiveShipping::Shipping
 
     USPSLOGIN = ENV["USPS_LOGIN"]
     UPSLOGIN = ENV["UPS_LOGIN"]
