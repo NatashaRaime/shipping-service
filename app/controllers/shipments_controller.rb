@@ -15,4 +15,17 @@ class ShipmentsController < ApplicationController
     pets = Pet.search(params[:query])
     render json: pets, only: [:age, :id, :human, :name]
   end
+
+  def create
+    puts ">>>>>>>>>>>>>>>>>>#{params}"
+    shipment = Shipment.new(shipment_params)
+    shipment.save
+    render json: {}, status: :created
+  end
+
+  private
+
+  def shipment_params
+    params.require(:shipment).permit(:origin, :destination, :packages)
+  end
 end

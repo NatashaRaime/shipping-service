@@ -13,7 +13,7 @@ class Package < ActiveRecord::Base
   # validates :weight, presence: true
 
   def origin
-    Location.new(country: "US", state: "WA", city: "Seattle", postal_code: "98101")
+    Location.new(country: country, state: state, city: city, postal_code: postal_code)
   end
 
   def destination
