@@ -62,14 +62,16 @@ group :development do
   gem 'binding_of_caller'
   gem 'pry-rails'
 end
+
   group :test do
     gem 'minitest-rails'
       gem 'minitest-reporters'
       # gem 'simplecov'
       gem 'minitest'
+  end
     # gem 'simplecov'
     group :production do
       gem 'pg'
       gem 'rails_12factor'
-    end
+  
   end
